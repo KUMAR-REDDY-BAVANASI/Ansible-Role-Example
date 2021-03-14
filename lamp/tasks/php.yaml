@@ -1,0 +1,12 @@
+---
+- name: install php
+  apt:
+   name: php
+   state: latest
+- name: copy php info file
+  copy: 
+   src: phpinfo.php
+   dest: /var/www/html/
+  notify: restart apache2 server
+
+
